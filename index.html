@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Tiny website to count how many words, as well as list how many occurences of each word there are in some text. Made by Skalixur">
+  <meta name="author" content="Skalixur">
+  <link rel="stylesheet" href="style/style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Repeat Notifier</title>
+</head>
+<body>
+  <form class="essay-form" onsubmit="doStuff(); return false;" >
+    <span class="heading">Paste your text in here: </span>
+    <br><br>
+    <textarea name="essay-input" class="essay-input" cols="150" rows="27"></textarea>
+      <br><br>
+      <input class="submit-button" type="submit" value="Submit">
+    </form>
+    <p class="total-sentence-count"></p>
+    <p class="total-word-count"></p>
+    <p>Repeated words and counts: </p>
+    <span class="words-list"></span>
+  <script src="js/script.js"></script>
+</body>
+</html>

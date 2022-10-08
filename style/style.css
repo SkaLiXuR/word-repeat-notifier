@@ -1,0 +1,24 @@
+* {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(to top, pink, lightblue);
+  margin: 50px;
+}
+
+.essay-input {
+  background-color: transparent;
+  font-size: 20px;
+  resize: both;
+}
+
+.heading {
+  font-size: 35px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.submit-button {
+  font-size: 25px;
+  padding: 10px 20px;
+}
