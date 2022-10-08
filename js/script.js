@@ -51,7 +51,7 @@ function doStuff() {
   }, 1000)
   setTimeout(() => {
     document.querySelector('.total-sentence-count').innerHTML =
-      'Total Sentence Count: ' + (input.match(/\./g) || []).length
+      'Total Sentence Count: ' + (input.match(/[\.\?\!]+/g) || []).length
 
     document.querySelector(
       '.total-word-count'
