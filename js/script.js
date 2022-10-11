@@ -7,7 +7,7 @@ let usedWords = {}
 function doStuff() {
   input = document.querySelector('.essay-input').value.toLowerCase()
   inputArr = input.split(/ +/)
-  wordCount = inputArr.length
+  wordCount = (input.match(/[\w\d]+/g) || []).length
 
   for (let i = 0; i < wordCount; i++) {
     prevValue = usedWords[`${inputArr[i]}`]
@@ -41,24 +41,14 @@ function doStuff() {
     msg += `${property}: ${usedWords[property]}<br>`
   }
 
-  let countdown = 10
-  const countdownIntv = setInterval(() => {
-    document.querySelector(
-      '.total-word-count'
-    ).innerHTML = `Please wait ${countdown} seconds while we display ads to you`
-    countdown--
-    if (countdown === 0) clearInterval(countdownIntv)
-  }, 1000)
-  setTimeout(() => {
-    document.querySelector('.total-sentence-count').innerHTML =
-      'Total Sentence Count: ' + (input.match(/[\.\?\!]+ +/g) || []).length
+  document.querySelector('.total-sentence-count').innerHTML =
+    'Total Sentence Count: ' + (input.match(/[\.\?\!]+ +/g) || []).length
 
-    document.querySelector(
-      '.total-word-count'
-    ).innerHTML = `Total Word Count: ${wordCount}`
-    document.querySelector('.words-list').innerHTML = msg
-    input = wordCount = inputArr = null
-    prevValue = 0
-    usedWords = {}
-  }, 11000)
+  document.querySelector(
+    '.total-word-count'
+  ).innerHTML = `Total Word Count: ${wordCount}`
+  document.querySelector('.words-list').innerHTML = msg
+  input = wordCount = inputArr = null
+  prevValue = 0
+  usedWords = {}
 }
