@@ -5,7 +5,10 @@ let prevValue = 0
 let usedWords = {}
 
 function doStuff() {
-  input = document.querySelector('.essay-input').value.toLowerCase()
+  input = document
+    .querySelector('.essay-input')
+    .value.toLowerCase()
+    .replace(/\n+/g, ' ')
   inputArr = input.split(/ +/)
   wordCount = (input.match(/[\w\d]+/g) || []).length
 
