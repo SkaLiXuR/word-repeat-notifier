@@ -10,12 +10,20 @@
 </head>
 <body>
   <a href="https://skalixur.github.io" class="website-link">← Website</a>
-  <form class="essay-form" onsubmit="doStuff(); return false;" >
+  <form class="essay-form" onsubmit="getWords(); return false;" >
     <span class="heading">Paste your text in here: </span>
     <br><br>
-    <textarea name="essay-input" class="essay-input" cols="150" rows="27"></textarea>
-      <br><br>
-      <input class="submit-button" type="submit" value="Submit">
+    <textarea 
+    name="essay-input" 
+    class="essay-input" 
+    cols="150" rows="27" 
+    placeholder="Your text here."
+    spellcheck="true"
+    wrap="soft"
+    ></textarea>
+    <br><br>
+    <input class="submit-button" type="submit" value="Submit">
+    <span>Live Update: </span><input type="checkbox" class="live-update-button">
     </form>
     <p class="total-sentence-count"></p>
     <p class="total-word-count"></p>

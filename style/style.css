@@ -2,6 +2,10 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+span {
+  margin-left: 15px;
+}
+
 body {
   background-image: linear-gradient(to top, pink, lightblue);
   margin: 50px;

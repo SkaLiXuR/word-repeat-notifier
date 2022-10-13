@@ -1,14 +1,18 @@
+const essayInput = document.querySelector('.essay-input')
+const liveUpdateButton = document.querySelector('.live-update-button')
+
 let input
 let inputArr
 let wordCount
 let prevValue = 0
 let usedWords = {}
 
-function doStuff() {
-  input = document
-    .querySelector('.essay-input')
-    .value.toLowerCase()
-    .replace(/\n+/g, ' ')
+essayInput.addEventListener('keydown', e => {
+  if (liveUpdateButton.checked) getWords()
+})
+
+function getWords() {
+  input = essayInput.value.toLowerCase().replace(/\n+/g, ' ')
   inputArr = input.split(/ +/)
   wordCount = (input.match(/[\w\d]+/g) || []).length
 
@@ -18,7 +22,6 @@ function doStuff() {
     if (prevValue) usedWords[`${inputArr[i]}`] = prevValue + 1
   }
 
-  console.log(usedWords)
   for (const property in usedWords) {
     if (usedWords[property] === 1) delete usedWords[property]
   }
