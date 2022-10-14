@@ -48,7 +48,7 @@ function getWords() {
   }
 
   document.querySelector('.total-sentence-count').innerHTML =
-    'Total Sentence Count: ' + (input.match(/[\.\?\!]+ +/g) || []).length
+    'Total Sentence Count: ' + (input.match(/(\w+)+[\.\?\!] +/gim) || []).length
 
   document.querySelector(
     '.total-word-count'
