@@ -12,7 +12,7 @@ essayInput.addEventListener('keydown', e => {
 })
 
 function getWords() {
-  input = essayInput.value.toLowerCase().replace(/\n+/g, ' ')
+  input = essayInput.value.toLowerCase().replace(/\n+/g, ' ').replace(/,+/g, '').replace(/:+/g, '').replace(/\$+/, '').replace()
   inputArr = input.split(/ +/)
   wordCount = (input.match(/[\w\d]+/g) || []).length
 
