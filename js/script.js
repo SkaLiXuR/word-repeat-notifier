@@ -12,9 +12,9 @@ essayInput.addEventListener('keydown', e => {
 })
 
 function getWords() {
-  input = essayInput.value.toLowerCase().replace(/\n+/g, ' ').replace(/,+/g, '').replace(/:+/g, '').replace(/\$+/, '').replace()
+  input = essayInput.value.toLowerCase().replace(/\n+/g, ' ')
   inputArr = input.split(/ +/)
-  wordCount = (input.match(/[\w\d]+/g) || []).length
+  wordCount = (input.match(/(\w-?)+/gm) || []).length
 
   for (let i = 0; i < wordCount; i++) {
     prevValue = usedWords[`${inputArr[i]}`]
@@ -48,7 +48,7 @@ function getWords() {
   }
 
   document.querySelector('.total-sentence-count').innerHTML =
-    'Total Sentence Count: ' + (input.match(/(\w+)+[\.\?\!] +/gim) || []).length
+    'Total Sentence Count: ' + (input.match(/(\w+)+[\.\?\!] +/gm) || []).length
 
   document.querySelector(
     '.total-word-count'
